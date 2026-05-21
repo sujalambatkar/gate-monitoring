@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0d0d14;
+  --surface: #13131f;
+  --border: #1e1e30;
+  --accent: #6c63ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: #e2e2f0;
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: #2a2a40; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Utility: glow pulse for live indicator */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 6px #22c55e88; }
+  50%       { box-shadow: 0 0 14px #22c55ecc; }
+}
+.live-dot {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Severity borders */
+.severity-high   { border-left: 4px solid #ef4444; }
+.severity-medium { border-left: 4px solid #f59e0b; }
+.severity-low    { border-left: 4px solid #22c55e; }
