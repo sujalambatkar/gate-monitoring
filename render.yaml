@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: gate-monitoring
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python -c "from ultralytics import YOLO; YOLO('yolov8n.pt')"
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: site_ops_intel
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: MODEL_BASE
+        value: ""
+      - key: MODEL_BOX
+        value: ""
+      - key: MODEL_BARREL
+        value: ""
