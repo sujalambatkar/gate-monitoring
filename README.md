@@ -202,3 +202,4 @@ The **Reset Counts** button on the dashboard calls `POST /analyze/reset-counts`,
 
 Built with FastAPI · Next.js 15 · YOLOv8 (ultralytics) · Google Gemini · MongoDB · Recharts
 # test change
+# trigger
